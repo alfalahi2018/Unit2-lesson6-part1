@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>National Animals World Tour | Unit 2 Awesome Animals | Lesson 6 Part 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2b4d;--ok:#1fb25a;--bad:#e5383b;--sun:#ffd93d;--c:#ff7043;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--ink);font-weight:600;padding-bottom:40px;background:linear-gradient(180deg,#d9f0ff 0%,#fff8e1 55%,#ffe8d9 100%) fixed}
+h1,h2,h3{font-family:'Baloo 2',system-ui,sans-serif;margin:0}
+header{position:relative;overflow:hidden;color:#fff;padding:16px 16px 12px;background:linear-gradient(110deg,#2979ff,#00b8d4 35%,#ffca28 70%,#ff7043);border-bottom:6px solid #fff}
+header h1{font-size:clamp(24px,5.5vw,38px);font-weight:800;line-height:1.1;text-shadow:2px 3px 0 #0003;position:relative}
+header small{position:relative;font-weight:800;text-shadow:1px 1px 0 #0003}
+.fl{position:absolute;font-size:34px;animation:fl 4s ease-in-out infinite}
+.plane{position:absolute;top:6px;font-size:34px;animation:fly 12s linear infinite}
+@keyframes fl{50%{transform:translateY(-10px) rotate(8deg)}}
+@keyframes fly{from{left:-60px}to{left:105%}}
+.bar{position:relative;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.pill{background:#fff;color:var(--ink);border-radius:99px;padding:5px 12px;font-weight:800;box-shadow:0 3px 0 #0002}
+select,textarea,input{font:inherit;border:3px solid var(--ink);border-radius:12px;padding:5px 8px;background:#fff;color:var(--ink)}
+.tabs button{background:#ffffff40;color:#fff;border:3px solid #fff;border-radius:99px;padding:5px 14px;font:800 15px Nunito;cursor:pointer}
+.tabs button.on{background:#fff;color:var(--ink)}
+main{max-width:920px;margin:0 auto;padding:14px}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.st{background:var(--c);color:#fff;border:0;border-radius:20px;padding:12px;text-align:left;cursor:pointer;font:inherit;position:relative;box-shadow:0 6px 0 #0003;transition:transform .15s}
+.st:hover,.st:focus-visible{transform:translateY(-3px) rotate(-1deg);outline:4px solid #fff}
+.st .em{font-size:36px;display:block}.st b{display:block;font-family:'Baloo 2';font-size:19px;line-height:1.1;text-shadow:1px 1px 0 #0003}.st span{font-size:13px}
+.st.done::after{content:"✔";position:absolute;right:10px;top:6px;background:#fff;color:var(--ok);border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;font-size:18px}
+.st.cur{outline:4px solid var(--ink)}
+.prog{position:relative;height:16px;background:#fff;border:3px solid var(--ink);border-radius:99px;margin:22px 0 14px}.prog i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2979ff,#ffca28,#ff7043);width:0;transition:width .5s}
+#pl{position:absolute;top:-22px;font-size:26px;transition:left .5s;left:0}
+#stage{background:#fff;border:5px solid var(--c);border-radius:26px;padding:16px;min-height:180px;box-shadow:0 8px 0 #0002}
+#stage h2{color:var(--c);font-size:28px;filter:brightness(.85)}
+.tag{display:inline-block;background:var(--c);color:#fff;border-radius:99px;padding:2px 12px;font-size:13px;font-weight:800;margin-bottom:6px}
+.big{font-size:64px;text-align:center;line-height:1.1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:10px;background:#fff3c4;border-radius:18px;min-height:50px;margin:8px 0;border:3px dashed #ffbf47}
+.chip{color:#fff;border-radius:99px;padding:6px 16px;font:800 18px 'Baloo 2';cursor:grab;user-select:none;box-shadow:0 3px 0 #0003}
+.chip:nth-child(5n+1){background:#ff6b6b}.chip:nth-child(5n+2){background:#ff9f1c}.chip:nth-child(5n+3){background:#2ec4b6}.chip:nth-child(5n+4){background:#3a86ff}.chip:nth-child(5n){background:#9b5de5}
+.chip.sel{outline:4px solid var(--ink);transform:scale(1.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:10px 0}
+.card{border:4px dashed #bbb;border-radius:20px;padding:6px;text-align:center}
+.card:nth-child(4n+1){background:#fff0e6}.card:nth-child(4n+2){background:#e5f8f5}.card:nth-child(4n+3){background:#ecefff}.card:nth-child(4n){background:#fff0f6}
+.card svg{width:100%;max-width:130px;height:auto}
+.slot{display:inline-block;min-width:110px;min-height:34px;border:3px dashed #999;border-radius:12px;text-align:center;font:800 17px 'Baloo 2';line-height:28px;background:#fff;padding:0 8px;vertical-align:middle}
+.slot.ok{border:3px solid var(--ok);background:#e3f6e9;color:var(--ok)}
+.row{background:#f2f8ff;border:3px solid #c4dcff;border-radius:16px;padding:8px 12px;margin:8px 0;font-size:18px;line-height:2.1}
+.row:nth-child(even){background:#fff8ef;border-color:#ffd9ae}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.opt,.btn{border:3px solid var(--ink);background:#fff;border-radius:16px;padding:10px;font:800 18px Nunito;cursor:pointer;color:var(--ink);box-shadow:0 4px 0 #0002}
+.opt:hover:not(:disabled){background:#fff3c4}.opt.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.btn{background:var(--c);color:#fff;border-color:var(--c)}.btn.alt{background:#fff;color:var(--ink);border-color:var(--ink)}
+.tx{background:#fff;border-left:6px solid var(--c);border-radius:12px;padding:8px 12px;margin:8px 0;font-size:17px;display:flex;gap:10px;align-items:center}.tx svg{width:84px;flex:none}
+.ev{background:#fff8e6;border-left:6px solid var(--sun);padding:8px 12px;margin:8px 0;border-radius:8px}
+.no{animation:sh .4s;border-color:var(--bad)!important}@keyframes sh{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+.msg{margin-top:12px;padding:12px 14px;border-radius:16px;background:#e3f6e9;border:3px solid var(--ok);font-weight:800}
+.cert{text-align:center;border:8px double #ff7043;background:linear-gradient(135deg,#fff,#e8f4ff);border-radius:26px;padding:20px;margin:16px 0}.cert h2{font-size:32px;color:#2979ff}
+.boom{position:fixed;font-size:30px;pointer-events:none;animation:up 1.3s forwards;z-index:9}@keyframes up{to{transform:translateY(-240px) rotate(50deg);opacity:0}}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px;background:#fff}td,th{border:2px solid #c4dcff;padding:6px 8px;text-align:left;vertical-align:top}th{background:#2979ff;color:#fff}
+.plan{background:#fff;border-radius:22px;padding:14px;border:4px solid #2979ff}.plan h3{color:#ff7043;margin:16px 0 4px;font-size:22px}.plan ul{margin:4px 0;padding-left:20px}
+footer{text-align:center;margin-top:20px;font-weight:800;color:#2979ff}.hide{display:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<header>
+<span class="plane">✈️</span><span class="fl" style="left:6%;top:54px">🌍</span><span class="fl" style="left:44%;top:50px;animation-delay:-1.5s">🗺️</span><span class="fl" style="right:6%;top:50px;animation-delay:-3s">🧳</span>
+<h1>🌍 National Animals World Tour</h1>
+<small>Unit 2 · Awesome animals · Lesson 6 part 1 · Culture · Grade 7 (Oman)</small>
+<div class="bar">
+<span class="pill">⭐ Score: <b id="sc">0</b></span>
+<label class="pill">Level <select id="lvl" aria-label="Choose your level"><option value="support">Support 🌱</option><option value="standard" selected>Standard 🌿</option><option value="challenge">Challenge 🌳</option></select></label>
+<span class="tabs"><button id="tG" class="on">Game</button> <button id="tT">Teacher plan</button></span>
+</div></header>
+<main>
+<section id="game">
+<p><b>Take a trip around the world to meet amazing national animals!</b> Collect a stamp at every stop. Visit the stops in any order.</p>
+<div class="map" id="map"></div><div class="prog"><span id="pl">✈️</span><i id="pb"></i></div>
+<div id="stage"><h2>Welcome aboard! 🧳</h2><p>Pick a stop above. 🔊 Tap the speaker to hear text.</p></div>
+<div id="cert"></div>
+</section>
+
+<section id="plan" class="plan hide">
+<h2>Teacher plan · 25 minutes</h2>
+<p><b>Class:</b> Grade 7 · <b>Unit 2:</b> Awesome animals · <b>Lesson 6, part 1</b> (Culture, Class Book page 48)<br>
+<b>Lesson aim:</b> to read about national animals around the world; to make a world map of national animals (project, part 2).<br>
+<b>Target language:</b> striped, curved, grass, tongue, venom.<br>
+<b>Materials:</b> culture video, project video, traffic light cards, True/False response cards, Photocopiable 14, device or projector.</p>
+<table>
+<tr><th>Time</th><th>Stage</th><th>What happens</th><th>Teacher’s Book link</th></tr>
+<tr><td>0–4</td><td><b>Warm-up</b><br>Stop 1: Passport Check</td><td>Ask if their country has a national animal (Oman: the Arabian oryx). Students match four national animals to their countries.</td><td>“Starting the lesson” and Before you read: does your country have any national animals? Discuss.</td></tr>
+<tr><td>4–11</td><td><b>Formative 1</b><br>Stop 2: Read and Answer</td><td>Students listen and read about three national animals, then answer questions without looking back (or use Show text for fewer points).</td><td>Activity 1 (2.13): listen and read; comprehension questions about the text.</td></tr>
+<tr><td>11–15</td><td><b>Formative 2</b><br>Stop 3: Word Safari</td><td>Students drag the target words into sentences about the animals.</td><td>Target language: striped, curved, grass, tongue, venom.</td></tr>
+<tr><td>15–20</td><td><b>Formative 3</b><br>Stop 4: True or False?</td><td>True/False with evidence. Use the True/False response cards in class too.</td><td>Extension: True/False response cards technique to quiz students on the text.</td></tr>
+<tr><td>20–25</td><td><b>Closing</b><br>Stop 5: Our National Animal</td><td>Students vote on the most interesting national animal and write sentences. Exit ticket.</td><td>“Finishing the lesson”: summative and thought-provoking questions; learning diary; Photocopiable 14.</td></tr>
+</table>
+<h3>Differentiation</h3>
+<ul>
+<li><b>Support 🌱:</b> first-letter hints in Passport Check, the text stays on screen with two answer choices, and sentence frames in the closing.</li>
+<li><b>Standard 🌿:</b> the text is hidden after reading (Show text button, fewer points), three choices.</li>
+<li><b>Challenge 🌳:</b> same as Standard, plus three written sentences and a reason for the vote.</li>
+</ul>
+<h3>Notes and keys</h3>
+<ul>
+<li><b>Passport Check key:</b> ring-tailed lemur: Madagascar · Arabian oryx: Oman · Komodo dragon: Indonesia · kiwi: New Zealand.</li>
+<li><b>Questions key:</b> Madagascar · running, jumping and climbing · grass and leaves · Oman, Jordan, the UAE and Saudi Arabia · its tongue · it uses venom.</li>
+<li>The short texts in the game are summaries written for this game from the topics in the Teacher’s Book. Use the full Class Book text (2.13) for reading, and the culture video.</li>
+<li>Animal pictures are simple drawings made for the game. Show the photos from the Class Book too.</li>
+<li>Deaf/hard of hearing students: the text is written, audio is optional.</li>
+<li>Part 2 of this lesson is the project: make a world map of national animals (groups, continents, notes, map, presentation).</li>
+</ul>
+</section>
+<footer>Created by T.Badria Alfalahi</footer>
+</main>
+<script>
+const $=s=>document.querySelector(s),sh=a=>[...a].sort(()=>Math.random()-.5),lvl=()=>$('#lvl').value;
+const S={score:0,done:{},cur:-1},COL=['#ff7043','#26a69a','#5c6bc0','#ec407a','#7cb342'];
+const K={
+oryx:'<svg viewBox="0 0 80 60" role="img" aria-label="Arabian oryx"><g stroke="#333" stroke-width="2"><path d="M60 14L36 2M66 14L44 0" stroke-width="3"/><ellipse cx="36" cy="36" rx="24" ry="12" fill="#fff"/><path d="M52 30L64 18" stroke="#fff" stroke-width="10"/><ellipse cx="66" cy="22" rx="8" ry="6" fill="#fff"/><path d="M18 46v10M28 47v10M44 47v10M54 46v10" stroke-width="3"/></g><path d="M62 20q6 3 8 8" stroke="#7a4a2a" stroke-width="3" fill="none"/><circle cx="64" cy="19" r="1.6"/></svg>',
+lemur:'<svg viewBox="0 0 80 60" role="img" aria-label="ring-tailed lemur"><path d="M16 46Q-4 30 14 6" stroke="#fff" stroke-width="9" fill="none"/><path d="M16 46Q-4 30 14 6" stroke="#333" stroke-width="9" fill="none" stroke-dasharray="6 6"/><ellipse cx="40" cy="38" rx="16" ry="12" fill="#9aa0aa"/><circle cx="58" cy="22" r="10" fill="#9aa0aa"/><ellipse cx="62" cy="25" rx="6" ry="5" fill="#fff"/><circle cx="55" cy="19" r="4" fill="#ffe082" stroke="#333"/><circle cx="55" cy="19" r="1.6"/><circle cx="66" cy="24" r="2"/><path d="M34 48v8M46 48v8" stroke="#6b7078" stroke-width="4"/></svg>',
+komodo:'<svg viewBox="0 0 80 60" role="img" aria-label="Komodo dragon"><path d="M2 48Q20 36 36 40T62 36" stroke="#5e8c3a" stroke-width="12" fill="none" stroke-linecap="round"/><ellipse cx="64" cy="34" rx="12" ry="7" fill="#6fa044"/><circle cx="66" cy="31" r="2"/><path d="M75 36l5 3M75 36l5-3" stroke="#e53935" stroke-width="2"/><path d="M22 44v10M44 42v12" stroke="#4d7530" stroke-width="4"/></svg>',
+kiwi:'<svg viewBox="0 0 80 60" role="img" aria-label="kiwi"><circle cx="34" cy="34" r="22" fill="#8d6e4a"/><circle cx="52" cy="26" r="8" fill="#8d6e4a"/><path d="M58 28Q72 34 78 48" stroke="#ffb74d" stroke-width="3" fill="none"/><circle cx="52" cy="24" r="1.8"/><path d="M28 54v6M40 54v6" stroke="#ffb74d" stroke-width="3"/></svg>'};
+const AN=[['ring-tailed lemur','Madagascar','lemur'],['Arabian oryx','Oman','oryx'],['Komodo dragon','Indonesia','komodo'],['kiwi','New Zealand','kiwi']];
+function say(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u)}catch(e){}}
+function boom(){for(let i=0;i<18;i++){const b=document.createElement('span');b.className='boom';b.textContent=['✈️','🎉','🌍','🧳','⭐','🦌'][i%6];b.style.left=8+Math.random()*84+'vw';b.style.top=55+Math.random()*35+'vh';document.body.appendChild(b);setTimeout(()=>b.remove(),1400)}}
+function pts(n){S.score+=n;$('#sc').textContent=S.score}
+const ST=[{e:'🛂',t:'Passport Check',m:4,k:'Warm-up'},{e:'📖',t:'Read and Answer',m:7,k:'Listen and read'},{e:'🦎',t:'Word Safari',m:4,k:'Drag and drop'},{e:'🚦',t:'True or False?',m:5,k:'Evidence'},{e:'🗳️',t:'Our National Animal',m:5,k:'Closing'}];
+function drawMap(){
+$('#map').innerHTML=ST.map((s,i)=>`<button class="st ${S.done[i]?'done':''} ${S.cur==i?'cur':''}" style="--c:${COL[i]}" data-i="${i}"><span class="em">${s.e}</span><b>Stop ${i+1}: ${s.t}</b><span>${s.k} · about ${s.m} min</span></button>`).join('');
+document.querySelectorAll('.st').forEach(b=>b.onclick=()=>go(+b.dataset.i));
+const n=Object.keys(S.done).length;$('#pb').style.width=n*20+'%';$('#pl').style.left=`calc(${n*20}% - ${n*5}px)`;
+if(n==5)$('#cert').innerHTML=`<div class="cert"><div style="font-size:54px">🏆🌍✈️</div><h2>World Explorer!</h2><p>You learned about national animals around the world.<br><b>Final score: ${S.score}</b></p><small>Created by T.Badria Alfalahi</small></div>`}
+function finish(i,x=''){
+if(!S.done[i]){S.done[i]=1;pts(20);boom()}drawMap();
+const nx=ST.findIndex((_,j)=>!S.done[j]);
+$('#stage').insertAdjacentHTML('beforeend',`<div class="msg">🛂 Stamp collected! +20 bonus. ${x}${nx>=0?`<br><button class="btn" id="nx" style="margin-top:8px">Next: ${ST[nx].t}</button>`:'<br>Tour complete! Scroll down for your certificate!'}</div>`);
+if(nx>=0)$('#nx').onclick=()=>go(nx)}
+function go(i){S.cur=i;$('#stage').style.setProperty('--c',COL[i]);drawMap();[m0,m1,m2,m3,m4][i]();$('#stage').scrollIntoView({behavior:'smooth',block:'start'})}
+const head=i=>`<span class="tag">Stop ${i+1} · ${ST[i].k}</span><h2>${ST[i].t}</h2>`;
+const flash=(e,c='no')=>{e.classList.add(c);setTimeout(()=>e.classList.remove(c),450)};
+function dnd(check){
+let sel=null;
+document.querySelectorAll('.chip').forEach(c=>{c.ondragstart=e=>e.dataTransfer.setData('text',c.dataset.w);c.onclick=()=>{document.querySelectorAll('.chip.sel').forEach(x=>x.classList.remove('sel'));sel=c;c.classList.add('sel')}});
+document.querySelectorAll('.slot').forEach(s=>{s.ondragover=e=>e.preventDefault();s.ondrop=e=>{e.preventDefault();check(s,e.dataTransfer.getData('text'))};s.onclick=()=>{if(sel)check(s,sel.dataset.w)}})}
+const rm=w=>{const c=document.querySelector(`.chip[data-w="${w}"]`);if(c)c.remove()};
+
+function m0(){
+let left=AN.length;const L=lvl();
+$('#stage').innerHTML=head(0)+`<p><b>Does your country have a national animal?</b> (Oman’s national animal is the Arabian oryx!) Drag each country to its national animal (or tap a country, then an animal).</p><div class="chips">${sh(AN).map(a=>`<span class="chip" draggable="true" data-w="${a[1]}">${a[1]}</span>`).join('')}</div><div class="grid">${AN.map((a,i)=>`<div class="card">${K[a[2]]}<br><b>${a[0]}</b><br><span class="slot" data-i="${i}">${L=='support'?a[1][0]+' …':''}</span></div>`).join('')}</div>`;
+dnd((s,w)=>{const i=+s.dataset.i;if(s.classList.contains('ok'))return;
+if(AN[i][1]==w){s.classList.add('ok');s.textContent=w;rm(w);pts(8);say('The '+AN[i][0]+' is the national animal of '+w);if(--left==0)finish(0,'Which other national animals do you know?')}else flash(s)})}
+
+const TX=[['lemur','Ring-tailed lemurs are the national animal of Madagascar. They have a striped tail with black and white rings. They are very good at running, jumping and climbing.'],['oryx','The Arabian oryx is the national animal of Oman. It has white fur and long horns. It eats grass and leaves from acacia trees. You can find it in Oman, Jordan, the UAE and Saudi Arabia.'],['komodo','The Komodo dragon is the national animal of Indonesia. It uses its long tongue to find food. It has venom in its bite, so it is a dangerous hunter.']];
+function m1(){
+const L=lvl();let shown=L=='support',q=0;
+const Q=[['Where are ring-tailed lemurs from?','Madagascar',['Oman','Indonesia']],['What are ring-tailed lemurs good at?','running, jumping and climbing',['swimming and diving','flying and singing']],['What does the Arabian oryx eat?','grass and leaves',['fish','insects']],['In which countries can you find the Arabian oryx?','Oman, Jordan, the UAE and Saudi Arabia',['Madagascar and Indonesia','New Zealand and Australia']],['What does the Komodo dragon use to find food?','its tongue',['its tail','its horns']],['How does the Komodo dragon hunt?','It uses venom.',['It flies away.','It digs a hole.']]];
+const txt=()=>`<div id="tt">${TX.map(t=>`<div class="tx">${K[t[0]]}<div>${t[1]}<br><button class="btn alt" data-s="${t[1].replace(/"/g,'')}" style="padding:2px 10px;font-size:14px">🔊</button></div></div>`).join('')}</div>`;
+const show=()=>{
+if(q==Q.length){$('#stage').innerHTML=head(1)+'<p>✅ You understood the national animals text!</p>';return finish(1,'Watch the culture video to find out more.')}
+const [qq,a,w]=Q[q],o=sh([a,...(L=='support'?w.slice(0,1):w)]);
+$('#stage').innerHTML=head(1)+(q==0?'<p>Listen and read, then answer questions.</p>':'')+(shown?txt():'<button class="btn alt" id="st2">📄 Show text (fewer points)</button>')+`<p>Question ${q+1} of ${Q.length}</p><h3 style="font-size:22px">${qq}</h3><div class="opts" style="grid-template-columns:1fr">${o.map(x=>`<button class="opt" data-c="${x==a?1:0}">${x}</button>`).join('')}</div>`;
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>say(b.dataset.s));
+if($('#st2'))$('#st2').onclick=()=>{shown=true;show2=true;const w=document.createElement('div');w.innerHTML=txt();$('#st2').replaceWith(w);document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>say(b.dataset.s))};
+document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(b.dataset.c=='1'){b.classList.add('ok');pts(L=='support'||!show2?10:5);say(a);document.querySelectorAll('.opt').forEach(x=>x.disabled=true);q++;setTimeout(show,1000)}else{flash(b);b.disabled=true}})};
+let show2=L=='support';
+show()}
+
+function m2(){
+const D=[['A ring-tailed lemur has a black and white','striped','tail.'],['The Arabian oryx eats','grass','and leaves.'],['A Komodo dragon uses its long','tongue','to find food.'],['A Komodo dragon’s bite has','venom','in it.'],['The kiwi has a long,','curved','beak.']];
+let left=D.length;const L=lvl();
+$('#stage').innerHTML=head(2)+`<p>Drag the correct word into each sentence (or tap a word, then a gap).</p><div class="chips">${sh(D).map(d=>`<span class="chip" draggable="true" data-w="${d[1]}">${d[1]}</span>`).join('')}</div>${D.map((d,i)=>`<div class="row">${d[0]} <span class="slot" data-i="${i}">${L=='support'?d[1][0]+' …':''}</span> ${d[2]}</div>`).join('')}`;
+dnd((s,w)=>{const i=+s.dataset.i;if(s.classList.contains('ok'))return;
+if(D[i][1]==w){s.classList.add('ok');s.textContent=w;rm(w);pts(8);say(D[i][0]+' '+w+' '+D[i][2]);if(--left==0)finish(2,'Venom is a poison. A snake or a Komodo dragon can have it.')}else flash(s)})}
+
+function m3(){
+const Q=[['Ring-tailed lemurs are from Madagascar.',1,'Ring-tailed lemurs are the national animal of Madagascar.'],['The Arabian oryx lives only in Oman.',0,'You can find the Arabian oryx in Oman, Jordan, the UAE and Saudi Arabia.'],['Komodo dragons use their tongues to find food.',1,'The Komodo dragon uses its long tongue to find food.'],['The national animal of Indonesia is the lemur.',0,'The national animal of Indonesia is the Komodo dragon.'],['A kiwi can fly.',0,'The kiwi is an unusual bird that cannot fly.'],['Many countries have national animals, flags and special songs.',1,'Countries have flags and special songs, but many have national animals, too.']];
+let q=0;
+const show=()=>{
+if(q==Q.length){$('#stage').innerHTML=head(3)+'<p>All cards solved!</p>';return finish(3)}
+const [s,a,ev]=Q[q];
+$('#stage').innerHTML=head(3)+`<p>Card ${q+1} of ${Q.length}. Hold up your True/False card!</p><h3 style="font-size:22px">“${s}”</h3><div class="opts"><button class="opt" data-v="1">✅ True</button><button class="opt" data-v="0">❌ False</button></div><div id="ex"></div>`;
+document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(+b.dataset.v!=a){flash(b);return}
+document.querySelectorAll('.opt').forEach(x=>x.disabled=true);b.classList.add('ok');pts(10);say(ev);
+$('#ex').innerHTML=`<div class="ev">Evidence: ${ev}</div>`;q++;setTimeout(show,lvl()=='support'?2800:2100)})};
+show()}
+
+function m4(){
+const L=lvl(),need=L=='challenge'?3:2,F=/national animal/i;
+$('#stage').innerHTML=head(4)+`<p><b>Class vote:</b> Which national animal do you think is the most interesting?</p><div class="grid">${AN.map(a=>`<button class="opt vt" data-n="${a[0]}">${K[a[2]]}<br>${a[0]}</button>`).join('')}</div><div id="w" class="hide"></div>`;
+document.querySelectorAll('.vt').forEach(b=>b.onclick=()=>{document.querySelectorAll('.vt').forEach(x=>x.disabled=true);b.classList.add('ok');pts(5);const n=b.dataset.n;
+$('#w').classList.remove('hide');$('#w').innerHTML=`<p>You voted for the <b>${n}</b>! (Count the class votes on the board.)</p><p>Write ${need} sentences about national animals. Use <b>national animal</b> in each sentence.</p>${L=='support'?'<p><small>Frame: The ___ is the national animal of ___. It has ___.</small></p>':''}<textarea id="tx" rows="4" style="width:100%" placeholder="The Arabian oryx is the national animal of Oman. It has …"></textarea><p><button class="btn" id="ck">Check</button></p><div id="fb"></div>`;
+$('#ck').onclick=()=>{const ls=$('#tx').value.split(/[.!?\n]+/).map(s=>s.trim()).filter(s=>F.test(s));
+if(ls.length>=need){pts(10*ls.length);$('#ck').remove();$('#tx').disabled=true;say(ls[0]);$('#fb').innerHTML=`<p>✅ ${ls.length} good sentences! Read them to a partner.</p><p><b>Exit ticket:</b> “I can talk about national animals.”</p><div class="opts"><button class="opt" data-x>😟 Not yet</button><button class="opt" data-x>🙂 Nearly</button><button class="opt" data-x>😎 Yes!</button></div>`;
+document.querySelectorAll('[data-x]').forEach(x=>x.onclick=()=>{x.classList.add('ok');finish(4,'Great world tour!')})}
+else $('#fb').innerHTML=`<p>You have ${ls.length} of ${need}. Use the words <i>national animal</i> in every sentence.</p>`}})}
+
+$('#lvl').onchange=()=>{if(S.cur>=0&&!S.done[S.cur])go(S.cur)};
+$('#tG').onclick=()=>{$('#game').classList.remove('hide');$('#plan').classList.add('hide');$('#tG').classList.add('on');$('#tT').classList.remove('on')};
+$('#tT').onclick=()=>{$('#plan').classList.remove('hide');$('#game').classList.add('hide');$('#tT').classList.add('on');$('#tG').classList.remove('on')};
+drawMap();
+</script></body></html>
